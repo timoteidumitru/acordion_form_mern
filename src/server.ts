@@ -7,7 +7,7 @@ import userRoutes from './routes/Users.route';
 
 const router = express();
 
-/** Connect to Mongo */
+// Connect to Mongo
 mongoose
   .connect(config.mongo.url, { retryWrites: true, w: 'majority' })
   .then(() => {
@@ -16,21 +16,22 @@ mongoose
   })
   .catch((error) => Logging.error(error));
 
-/** Only Start Server if Mongoose Connects */
+// Only Start Server if Mongoose Connects
 const StartServer = () => {
-  /** Log the request */
+  // Log the request
   router.use((req, res, next) => {
-    /** Log the req */
+    // Log the req
     Logging.info(`Incomming - METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}]`);
 
     res.on('finish', () => {
-      /** Log the res */
+      // Log the res
       Logging.info(`Result - METHOD: [${req.method}] - URL: [${req.url}] - IP: [${req.socket.remoteAddress}] - STATUS: [${res.statusCode}]`);
     });
 
     next();
   });
 
+  // middlewhere
   router.use(express.urlencoded({ extended: true }));
   router.use(express.json());
 
@@ -47,13 +48,13 @@ const StartServer = () => {
     next();
   });
 
-  /** Routes */
+  // Routes
   router.use('/user', userRoutes);
 
-  /** Healthcheck */
+  // Healthcheck */
   router.get('/ping', (req, res, next) => res.status(200).json({ hello: 'is alive..' }));
 
-  /** Error handling */
+  // Error handling
   router.use((req, res, next) => {
     const error = new Error('Route not found.');
 
@@ -64,5 +65,6 @@ const StartServer = () => {
     });
   });
 
+  // Server starts
   http.createServer(router).listen(config.server.port, () => Logging.info(`Server is running on port ${config.server.port}`));
 };

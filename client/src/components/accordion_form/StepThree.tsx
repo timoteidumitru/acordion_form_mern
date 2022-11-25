@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from 'react';
+import { SetStateAction } from 'react';
 import { IData } from './Accordion';
 
 type ISecondStep = {
@@ -20,11 +20,11 @@ const StepThree = ({ next, handleNext, data, handleInputChange, setData }: ISeco
       body: JSON.stringify(data)
     })
       .then((res) => res.json())
-      .then((result) => console.log('Data received from server: ', result))
+      .then((result) => console.log('Response received from server: ', result))
       .catch((err) => console.log('Error on POST data ', err));
   };
 
-  // handle submit and reset fields
+  // handle submit and reset fields + go to initial state
   const handleSubmit = () => {
     saveData();
     setData({

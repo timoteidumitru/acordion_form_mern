@@ -1,6 +1,7 @@
-import { NextFunction, Request, Response } from 'express';
+import { Request, Response } from 'express';
 import User from '../models/Users.model';
 
+// make a post request to user module
 const createUser = (req: Request, res: Response) => {
   const { firstName, surName, email, tel, gender, day, month, year, comments } = req.body;
 
@@ -22,10 +23,11 @@ const createUser = (req: Request, res: Response) => {
     .catch((error: any) => res.status(500).json({ error }));
 };
 
-const getAllUsers = (req: Request, res: Response, next: NextFunction) => {
-  return User.find()
-    .then((users: any) => res.status(200).json(users))
-    .catch((error: any) => res.status(500).json(error));
-};
+// geta all data from server
+// const getAllUsers = (req: Request, res: Response, next: NextFunction) => {
+//   return User.find()
+//     .then((users: any) => res.status(200).json(users))
+//     .catch((error: any) => res.status(500).json(error));
+// };
 
-export default { createUser, getAllUsers };
+export default { createUser };

@@ -12,6 +12,7 @@ export interface IUser {
   comments: string;
 }
 
+// Data model for insertion into DB
 export interface IUserModel extends IUser, Document {}
 
 const UserSchema: Schema = new Schema(

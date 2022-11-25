@@ -3,6 +3,7 @@ import { NextFunction, Request, Response } from 'express';
 import { IUser } from '../models/Users.model';
 import Logging from '../library/Logging';
 
+// validate date come from client
 export const ValidateJoi = (schema: ObjectSchema) => {
   return async (req: Request, res: Response, next: NextFunction) => {
     try {
@@ -17,6 +18,7 @@ export const ValidateJoi = (schema: ObjectSchema) => {
   };
 };
 
+// data validation schema
 export const Schemas = {
   user: {
     create: Joi.object<IUser>({
