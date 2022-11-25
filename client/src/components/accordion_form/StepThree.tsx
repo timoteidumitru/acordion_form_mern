@@ -43,7 +43,9 @@ const StepThree = ({ next, handleNext, data, handleInputChange, setData }: ISeco
 
   return (
     <section className="step-three">
-      <div className="step-three-title">Step 3: More comments</div>
+      <div className="step-three-title" onClick={() => handleNext('three')}>
+        Step 3: More comments
+      </div>
       <div className={next === 'three' ? 'step-three-details' : 'hide'}>
         <label>Comments</label>
         <div>

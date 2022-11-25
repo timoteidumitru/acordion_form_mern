@@ -10,7 +10,9 @@ type ISecondStep = {
 const StepTwo = ({ next, handleNext, data, handleInputChange }: ISecondStep) => {
   return (
     <section className="step-two">
-      <div className="step-two-title">Step 2: More comments</div>
+      <div className="step-two-title" onClick={() => handleNext('second')}>
+        Step 2: More comments
+      </div>
       <div className={next === 'second' ? 'step-two-details' : 'hide'}>
         <div className="step-two-tel">
           <div>

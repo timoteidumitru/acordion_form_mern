@@ -3,23 +3,22 @@
 ### Project guide
 
 ```
-#### Server Install modules
+#### Install modules for server(backend)
 npm install
 
-#### Client install modules
+#### Once modules installed, if you have typescript installed on your machine use:
+tsc -> this command will compile the build for backend
+
+### After running tsc command you can use:
+npm start -> will start server for backend which is running on: http://localhost:9090
+
+#### Install modules for Cliend(frontend)from root folder use following command:
 cd client && npm install
 
-#### once modules have been installed you can run:
-npm start -> to start client
+#### Once modules have been installed use command:
+npm start -> will start server for client side
 
-### then open new terminal and to get back to root folder where server lies then run the following command:
-tsc -> to creat the build followed by command:
-npm start -> to start the server
-
-### Once you're here you can test the app: having some validation on the server side and some basic validation on the client
-
-### I could work abit more on validation for frontend using libraries such as formik and yup and some work on functionalities could be done aswell for the "pixel perfect side"
-
+### Once you're here you can test the app on your browser.
 
 ### Hope you enjoy of this little MERN app I've made.
 ```

@@ -11,7 +11,9 @@ type IFirstStep = {
 const StepOne = ({ next, handleNext, data, handleInputChange }: IFirstStep) => {
   return (
     <section className="step-one">
-      <div className="step-one-title">Step 1: Your details</div>
+      <div className="step-one-title" onClick={() => handleNext('first')}>
+        Step 1: Your details
+      </div>
       <div className={next === 'first' ? 'step-one-details' : 'hide'}>
         <div className="step-one-name">
           <div>
