@@ -1,7 +1,7 @@
 .wrapper {
   width: 100vw;
   height: 100vh;
-  background-color: lightblue;
+  background-color: #d2e1ff;
 }
 
 .form-container {
@@ -25,7 +25,7 @@
   display: block;
   padding: 1em;
   border-radius: 10px;
-  background-color: #fdb231;
+  background-color: #ffc600;
   color: white;
   font-size: 1.1em;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -40,7 +40,7 @@
 .step-one,
 .step-two,
 .step-three {
-  background-color: lightgray;
+  background-color: #dedede;
   border-radius: 10px;
 }
 
@@ -50,7 +50,7 @@
   & button {
     display: block;
     margin-left: auto;
-    background-color: royalblue;
+    background-color: #3e4ab8;
     color: white;
     border-radius: 10px;
     font-weight: 600;
@@ -69,7 +69,7 @@
   & button {
     display: block;
     margin-left: auto;
-    background-color: royalblue;
+    background-color: #3e4ab8;
     color: white;
     border-radius: 10px;
     font-weight: 600;
@@ -97,7 +97,7 @@
       margin-bottom: 0.3em;
     }
     & input {
-      box-shadow: inset 0 0 10px rgba(113, 110, 110, 0.7);
+      box-shadow: inset 0 0 10px #716e6e;
       border-radius: 10px;
       border: 0;
       height: 3em;
@@ -240,7 +240,7 @@
       display: block;
       margin-left: auto;
       margin-right: 14px;
-      background-color: royalblue;
+      background-color: #3e4ab8;
       color: white;
       border-radius: 10px;
       font-weight: 600;
