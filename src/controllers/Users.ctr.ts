@@ -2,21 +2,23 @@ import { NextFunction, Request, Response } from 'express';
 import User from '../models/Users.model';
 
 const createUser = (req: Request, res: Response) => {
-  const { firstName, surName, email, telephone, gender, dob, comments } = req.body;
+  const { firstName, surName, email, tel, gender, day, month, year, comments } = req.body;
 
   const user = new User({
     firstName,
     surName,
     email,
-    telephone,
+    tel,
     gender,
-    dob,
+    day,
+    month,
+    year,
     comments
   });
 
   return user
     .save()
-    .then((user: any) => res.status(201).json(user))
+    .then((user: any) => res.status(201).json({ user }))
     .catch((error: any) => res.status(500).json({ error }));
 };
 

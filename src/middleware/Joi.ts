@@ -23,9 +23,11 @@ export const Schemas = {
       firstName: Joi.string().required(),
       surName: Joi.string().required(),
       email: Joi.string().email().required(),
-      telephone: Joi.string().required(),
+      tel: Joi.string().required(),
       gender: Joi.string().required(),
-      dob: Joi.string().required(),
+      day: Joi.string().required(),
+      month: Joi.string().required(),
+      year: Joi.string().required(),
       comments: Joi.string().required()
     })
   }
