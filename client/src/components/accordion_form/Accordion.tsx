@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './accordion.scss';
 import StepOne from './StepOne';
 import StepTwo from './StepTwo';
@@ -30,6 +30,12 @@ const Accordion = () => {
     year: '',
     comments: ''
   });
+
+  useEffect(() => {
+    setTimeout(function () {
+      setSuccess(false);
+    }, 5000);
+  }, [success]);
 
   // handle inputs dinamyc
   const handleInputChange = (
