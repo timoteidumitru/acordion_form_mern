@@ -75,7 +75,7 @@ const Accordion = () => {
       body: JSON.stringify(sendData)
     })
       .then((res) => res.json())
-      .then((result) => console.log('Response received from server: ', result.user))
+      .then((result) => console.log('Response received from server: ', result.user || result.error.details[0]))
       .catch((err) => console.log('Error on POST data ', err));
 
     setSuccess(true);
@@ -97,9 +97,7 @@ const Accordion = () => {
 
   return (
     <div className="wrapper">
-      {success && (
-        <h3 className="success-msg">Successfully send data to server, check console for the response from sever.</h3>
-      )}
+      {success && <h3 className="success-msg">Check console for the response from the sever.</h3>}
       <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
         <StepOne next={next} data={data} handleNext={handleNext} handleInputChange={handleInputChange} />
         <StepTwo next={next} data={data} handleInputChange={handleInputChange} handleNext={handleNext} />

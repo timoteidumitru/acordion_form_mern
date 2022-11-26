@@ -20,7 +20,7 @@ const createUser = (req: Request, res: Response) => {
   return user
     .save()
     .then((user: any) => res.status(201).json({ user }))
-    .catch((error: any) => res.status(500).json({ error }));
+    .catch((error: any) => res.status(500).json({ message: error.message }));
 };
 
 // geta all data from server
