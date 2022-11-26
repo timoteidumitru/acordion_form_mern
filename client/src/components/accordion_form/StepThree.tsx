@@ -20,6 +20,7 @@ const StepThree = ({ next, data, handleNext, handleInputChange }: IThirdStep) =>
             name="comments"
             value={data.comments}
             onChange={(e) => handleInputChange(e)}
+            minLength={3}
             maxLength={150}
           ></textarea>
           <button>Next</button>

@@ -15,7 +15,7 @@ const StepTwo = ({ next, data, handleNext, handleInputChange }: ISecondStep) => 
   };
 
   const patterns = {
-    telephone: '^0[7]{1}[2-7]{1}[0-9]{8}$',
+    telephone: '^0[7]{1}[0-9]{1}[0-9]{8}$',
     day: '[1-9]|1[1-9]|2[0-9]|3[0-1]',
     month: '0[1-9]|1[0-2]',
     year: '(19[2-9]\\d+|20[0-2]\\d+)'

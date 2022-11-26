@@ -56,7 +56,7 @@ const Accordion = () => {
     if (!/^[A-Za-z]{3,12}$/.test(data.firstName) || !/^[A-Za-z]{3,12}$/.test(data.surName)) {
       arg = 'first';
     } else if (
-      !/^0[7]{1}[2-7]{1}[0-9]{8}$/.test(data.tel) ||
+      !/^0[7]{1}[0-9]{1}[0-9]{8}$/.test(data.tel) ||
       !/[1-9]|1[1-9]|2[0-9]|3[0-1]/.test(data.day) ||
       !/0[1-9]|1[0-2]/.test(data.month) ||
       !/(19[2-9]\d+|20[0-2]\d+)/.test(data.year)
@@ -103,7 +103,7 @@ const Accordion = () => {
 
   return (
     <div className="wrapper">
-      {success && <h3 className="success-msg">Check console for the response from the sever.</h3>}
+      {success && <h3 className="success-msg">Check console for the response from sever.</h3>}
       <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
         <StepOne next={next} data={data} handleNext={handleNext} handleInputChange={handleInputChange} />
         <StepTwo next={next} data={data} handleInputChange={handleInputChange} handleNext={handleNext} />
