@@ -56,7 +56,7 @@ const Accordion = () => {
     if (!/^[A-Za-z]{3,12}$/.test(data.firstName) || !/^[A-Za-z]{3,12}$/.test(data.surName)) {
       arg = 'first';
     } else if (
-      !/^0[7]{1}[0-9]{1}[0-9]{8}$/.test(data.tel) ||
+      !/^0[7]{1}[0-9]{7,10}$/.test(data.tel) ||
       !/[1-9]|1[1-9]|2[0-9]|3[0-1]/.test(data.day) ||
       !/0[1-9]|1[0-2]/.test(data.month) ||
       !/(19[2-9]\d+|20[0-2]\d+)/.test(data.year)
