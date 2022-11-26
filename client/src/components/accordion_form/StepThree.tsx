@@ -1,56 +1,28 @@
-import { SetStateAction } from 'react';
 import { IData } from './Accordion';
 
-type ISecondStep = {
+type IThirdStep = {
   next: string;
   data: IData;
-  setData: (el: SetStateAction<IData>) => void;
   handleNext: (el: string) => void;
   handleInputChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 };
 
-const StepThree = ({ next, handleNext, data, handleInputChange, setData }: ISecondStep) => {
-  // send data to server
-  const saveData = () => {
-    fetch('http://localhost:9090/user/create', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-      .then((res) => res.json())
-      .then((result) => console.log('Response received from server: ', result))
-      .catch((err) => console.log('Error on POST data ', err));
-  };
-
-  // handle submit and reset fields + go to initial state
-  const handleSubmit = () => {
-    saveData();
-    setData({
-      firstName: '',
-      surName: '',
-      email: '',
-      tel: '',
-      gender: '',
-      day: '',
-      month: '',
-      year: '',
-      comments: ''
-    });
-    handleNext('first');
-  };
-
+const StepThree = ({ next, data, handleNext, handleInputChange }: IThirdStep) => {
   return (
     <section className="step-three">
-      <div className="step-three-title" onClick={() => handleNext('three')}>
+      <div className="step-three-title" onClick={() => handleNext('third')}>
         Step 3: More comments
       </div>
-      <div className={next === 'three' ? 'step-three-details' : 'hide'}>
+      <div className={next === 'third' ? 'step-three-details' : 'hide'}>
         <label>Comments</label>
         <div>
-          <textarea name="comments" value={data.comments} onChange={(e) => handleInputChange(e)}></textarea>
-          <button onClick={() => handleSubmit()}>Next </button>
+          <textarea
+            name="comments"
+            value={data.comments}
+            onChange={(e) => handleInputChange(e)}
+            maxLength={150}
+          ></textarea>
+          <button>Next</button>
         </div>
       </div>
     </section>

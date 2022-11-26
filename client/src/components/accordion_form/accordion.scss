@@ -255,3 +255,44 @@
     }
   }
 }
+
+.error-message {
+  font-size: 12px;
+  color: red;
+  padding: 12px;
+  padding-top: 5.8em;
+  position: absolute;
+  display: none;
+}
+
+input:focus:invalid + span {
+  display: block;
+}
+
+input {
+  transition: border-color 1s ease-out;
+}
+
+input:focus:valid {
+  background-color: lightgreen;
+  background-size: 25px;
+}
+
+input:focus:invalid {
+  background-color: lightsalmon;
+  background-size: 25px;
+}
+
+input:focus {
+  background-color: lightsalmon;
+  background-size: 25px;
+}
+.success-msg {
+  display: block;
+  color: forestgreen;
+  font-size: 1em;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding-top: 60px;
+}
