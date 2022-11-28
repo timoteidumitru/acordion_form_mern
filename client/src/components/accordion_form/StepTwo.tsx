@@ -73,10 +73,9 @@ const StepTwo = ({ next, data, handleNext, handleInputChange }: ISecondStep) => 
               pattern={patterns.year}
             />
           </div>
-          <span className="error-message">{errors.date}</span>
         </div>
         <button type="button" onClick={() => handleNext('third')}>
-          Next{' '}
+          Next <span className="chevron right"></span>
         </button>
       </div>
     </section>

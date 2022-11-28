@@ -8,6 +8,9 @@ type IThirdStep = {
 };
 
 const StepThree = ({ next, data, handleNext, handleInputChange }: IThirdStep) => {
+  const errors = {
+    comments: 'Should be at least 5 char.'
+  };
   return (
     <section className="step-three">
       <div className="step-three-title" onClick={() => handleNext('third')}>
@@ -20,10 +23,14 @@ const StepThree = ({ next, data, handleNext, handleInputChange }: IThirdStep) =>
             name="comments"
             value={data.comments}
             onChange={(e) => handleInputChange(e)}
-            minLength={3}
+            minLength={5}
             maxLength={150}
+            required
           ></textarea>
-          <button>Next</button>
+          <span className="error-message">{errors.comments}</span>
+          <button>
+            Next <span className="chevron right"></span>
+          </button>
         </div>
       </div>
     </section>

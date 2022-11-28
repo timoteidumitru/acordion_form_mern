@@ -53,7 +53,11 @@ const Accordion = () => {
 
   // handle next page
   const handleNext = (arg: string) => {
-    if (!/^[A-Za-z]{3,12}$/.test(data.firstName) || !/^[A-Za-z]{3,12}$/.test(data.surName)) {
+    if (
+      !/^[A-Za-z]{3,12}$/.test(data.firstName) ||
+      !/^[A-Za-z]{3,12}$/.test(data.surName) ||
+      !/^[^s@]+@([^s@.,]+.)+[^s@.,]{2,}$/.test(data.email)
+    ) {
       arg = 'first';
     } else if (
       !/^0[7]{1}[0-9]{7,10}$/.test(data.tel) ||
@@ -81,7 +85,7 @@ const Accordion = () => {
       body: JSON.stringify(sendData)
     })
       .then((res) => res.json())
-      .then((result) => console.log('Response received from server: ', result.user || result.error.details[0]))
+      .then((result) => console.log('Response from server: ', result.user || result.error.details[0]))
       .catch((err) => console.log('Error on POST data ', err));
 
     setSuccess(true);
@@ -103,7 +107,7 @@ const Accordion = () => {
 
   return (
     <div className="wrapper">
-      {success && <h3 className="success-msg">Check console for the response from sever.</h3>}
+      {success && <h3 className="success-msg">Check in console for response from sever.</h3>}
       <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
         <StepOne next={next} data={data} handleNext={handleNext} handleInputChange={handleInputChange} />
         <StepTwo next={next} data={data} handleInputChange={handleInputChange} handleNext={handleNext} />

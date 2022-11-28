@@ -17,7 +17,8 @@ const StepOne: React.FC<IFirstStep> = ({ next, data, handleNext, handleInputChan
 
   const patterns = {
     firstName: '^[A-Za-z]{3,12}$',
-    surName: '^[A-Za-z]{3,12}$'
+    surName: '^[A-Za-z]{3,12}$',
+    email: '^[^s@]+@([^s@.,]+.)+[^s@.,]{2,}$'
   };
 
   return (
@@ -60,11 +61,12 @@ const StepOne: React.FC<IFirstStep> = ({ next, data, handleNext, handleInputChan
             name="email"
             value={data.email}
             onChange={(e) => handleInputChange(e)}
+            pattern={patterns.email}
           />
           <span className="error-message">{errors.email}</span>
         </div>
         <button type="button" onClick={() => handleNext('second')}>
-          Next{' '}
+          Next <span className="chevron right"></span>
         </button>
       </div>
     </section>

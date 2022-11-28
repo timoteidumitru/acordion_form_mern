@@ -12,13 +12,13 @@ npm run build -> this command will compile the build for backend
 ### After running build command you can use:
 npm run start -> will start server for backend which is running on: http://localhost:9090
 
-#### Install modules for Cliend(frontend)from root folder use following command:
+#### Install modules for cliend(frontend), from root folder use following command:
 cd client && npm install
 
-#### Once modules have been installed use command:
+#### Once modules have been installed(on frontend) use command:
 npm run start -> will start server for client side on: http://localhost:3000
 
-### Once you're here you can test the app on your browser.
+### Once you're here you can test the app in your browser.
 
 ### Hope you enjoy of this little MERN app I've made.
 ```
@@ -27,8 +27,9 @@ npm run start -> will start server for client side on: http://localhost:3000
 
 #### Frontend:
 
-- React cli version 18 and TypeScript
-- Sass for style
+- React CLI version 18 and TypeScript
+- SASS for style
+- Regex for data validation
 
 #### Backend:
 
@@ -36,7 +37,7 @@ npm run start -> will start server for client side on: http://localhost:3000
 - Joi - for data validation
 - Mongoose ORM for connection to MongoDB atlas
 - DotEnv - for use of environment variables
-- chalk for prettier loggins
+- chalk for prettier logs
 
 #### Tools/Extensions
 
