@@ -68,6 +68,7 @@ const Accordion = () => {
       arg = 'second';
     }
 
+    // call next step
     setNext(arg);
   };
 
@@ -107,7 +108,7 @@ const Accordion = () => {
 
   return (
     <div className="wrapper">
-      {success && <h3 className="success-msg">Check in console for response from sever.</h3>}
+      {success && <h3 className="success-msg">Check browser console for response from sever.</h3>}
       <form className="form-container" onSubmit={(e) => handleSubmit(e)}>
         <StepOne next={next} data={data} handleNext={handleNext} handleInputChange={handleInputChange} />
         <StepTwo next={next} data={data} handleInputChange={handleInputChange} handleNext={handleNext} />

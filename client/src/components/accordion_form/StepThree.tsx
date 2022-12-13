@@ -9,7 +9,7 @@ type IThirdStep = {
 
 const StepThree = ({ next, data, handleNext, handleInputChange }: IThirdStep) => {
   const errors = {
-    comments: 'Should be at least 5 char.'
+    comments: 'Should be at least 5 chars.'
   };
   return (
     <section className="step-three">

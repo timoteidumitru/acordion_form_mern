@@ -264,13 +264,30 @@
   padding-top: 5.8em;
   position: absolute;
   display: none;
+  z-index: 1;
 }
 
 input:focus:invalid + span {
   display: block;
 }
 
+input:invalid + span {
+  display: block;
+}
+input:valid + span {
+  display: none;
+}
+input:invalid {
+  background-color: lightsalmon;
+  background-size: 25px;
+}
+// input:valid {
+//   background-color: lightgreen;
+//   background-size: 25px;
+// }
+
 input {
+  z-index: 10;
   transition: border-color 1s ease-out;
 }
 
